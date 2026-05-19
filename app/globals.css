@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Times New Roman", "Songti TC", serif;
+  --font-sans: "Helvetica Neue", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+[data-theme="light"] {
+  --bg: 244 241 236;
+  --ink: 17 17 16;
+  --muted: 90 90 85;
+  --line: 216 211 203;
+}
+
+[data-theme="dark"] {
+  --bg: 25 26 27;
+  --ink: 255 255 255;
+  --muted: 205 203 198;
+  --line: 150 150 148;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-sans);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+::selection {
+  background: rgb(var(--ink));
+  color: rgb(var(--bg));
+}
+
+/* abbreviated/dropped-letter style headings — letters replaced with thin spaces */
+.gap {
+  letter-spacing: 0.02em;
+}
+.gap-wide {
+  letter-spacing: 0.18em;
+}
+
+/* split reveal helpers */
+.line-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.28em;
+  margin-bottom: -0.28em;
+}
+.line-mask > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* keep native scrollbar visible */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background: rgb(var(--line));
+  border-radius: 999px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--muted));
+}
