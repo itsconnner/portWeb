@@ -125,15 +125,15 @@ export default function AboutPage() {
           </p>
 
           <div className="mt-10 grid grid-cols-12 items-center gap-x-10 gap-y-10 sm:mt-14">
-            <div ref={portraitWrap} className="col-span-12 sm:col-span-6">
+            <div ref={portraitWrap} className="col-span-12 mx-auto w-full max-w-[280px] sm:col-span-6 sm:mx-0 sm:max-w-none">
               <div className="relative aspect-[587/800] w-full overflow-hidden">
                 <Image
                   ref={portraitImg as never}
                   src="/portrait.jpg"
                   alt="Portrait of Yeyang"
                   fill
-                  sizes="(min-width: 640px) 45vw, 100vw"
-                  className="object-contain"
+                  sizes="(min-width: 640px) 45vw, 280px"
+                  className="object-cover"
                   priority
                 />
               </div>

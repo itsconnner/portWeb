@@ -3,9 +3,7 @@
 import { useState } from "react";
 
 const socials = [
-  { label: "IG", href: "#" },
-  { label: "TW", href: "#" },
-  { label: "LI", href: "#" }
+  { label: "IG", href: "https://www.instagram.com/yyw_1203/" }
 ];
 
 export default function Footer() {
@@ -40,6 +38,8 @@ export default function Footer() {
             <a
               key={s.label}
               href={s.href}
+              target="_blank"
+              rel="noreferrer"
               className="group relative font-mono text-xs uppercase tracking-[0.22em]"
             >
               {s.label}

@@ -34,6 +34,7 @@ export type Project = {
   gallery?: ProjectGalleryItem[];
   liveUrl?: string;
   liveUrlLabel?: string;
+  liveUrlNote?: string;
 };
 
 export const projects: Project[] = [
@@ -120,6 +121,7 @@ export const projects: Project[] = [
     liveUrl:
       "https://www.figma.com/proto/Fv0ynYQO1Kk11WAZSTlvPp/Single-Page-Yeyang_Wang?page-id=0%3A1&node-id=1-18&p=f&viewport=486%2C324%2C0.08&t=t5Tg7eJiHGlEPuGG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A18",
     liveUrlLabel: "view figma prototype",
+    liveUrlNote: "This prototype is best viewed on desktop. Mobile preview may not display correctly.",
     gallery: [
       { src: "/w3/desktop.png", alt: "Desktop layout", span: "full", width: 1440, height: 5015, caption: "Desktop" },
       { src: "/w3/tablet.png", alt: "Tablet layout", span: "full", width: 1024, height: 3566, caption: "Tablet", maxWidth: 720 },
@@ -236,9 +238,9 @@ export const projects: Project[] = [
     role: "Motion, 3D",
     scope: ["After Effects", "3D Modeling", "Compositing"],
     description:
-      "Two short motion projects exploring storytelling through After Effects and animated comic-style compositing.",
+      "Two fan-made motion projects exploring storytelling through After Effects and animated comic-style compositing.",
     intro:
-      "Two short motion projects exploring storytelling through After Effects and animated comic-style compositing.",
+      "Two fan-made motion projects exploring storytelling through After Effects and animated comic-style compositing.",
     credits: [
       { role: "Animation", name: "Yeyang" },
       { role: "Tools", name: "After Effects · Photoshop" }
@@ -256,7 +258,7 @@ export const projects: Project[] = [
         span: "full",
         caption: "Fan-made puzzle game trailer",
         description:
-          "A teaser for a fan-made puzzle game. The title was designed in Photoshop. All animation and 3D modeling were done in After Effects. Some clips are gameplay footage from the game itself."
+          "A fan-made teaser for a puzzle game. The title was designed in Photoshop and all animation and 3D modeling were done in After Effects. Some clips are gameplay footage from the game itself."
       },
       {
         type: "youtube",
@@ -266,8 +268,10 @@ export const projects: Project[] = [
         span: "full",
         caption: "Animated comic — Future State: Dark Detective #1",
         description:
-          "A motion comic adapted from Batman: Future State — Dark Detective #1. Original comic art and story by DC; animation and compositing by me."
-      }
+          "A fan-made motion comic adapted from Batman: Future State — Dark Detective #1. Original comic art and story by DC; animation and compositing by me."
+      },
+      { src: "/w7/project-1.png", alt: "Project breakdown — puzzle game trailer", span: "half", width: 1920, height: 5766, caption: "Project 1" },
+      { src: "/w7/project-2.jpg", alt: "Project breakdown — animated comic", span: "half", width: 1920, height: 5842, caption: "Project 2" }
     ]
   }
 ];

@@ -125,7 +125,7 @@ export default function CaseStudy({
           )}
 
           {project.liveUrl && (
-            <div data-meta className="col-span-12 mt-8 flex justify-center">
+            <div data-meta className="col-span-12 mt-8 flex flex-col items-center gap-3">
               <a
                 data-cursor="link"
                 href={project.liveUrl}
@@ -136,6 +136,11 @@ export default function CaseStudy({
                 <span>{project.liveUrlLabel ?? "visit site"}</span>
                 <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">↗</span>
               </a>
+              {project.liveUrlNote && (
+                <p className="max-w-md text-center font-mono text-[11px] leading-relaxed text-muted">
+                  {project.liveUrlNote}
+                </p>
+              )}
             </div>
           )}
         </div>
