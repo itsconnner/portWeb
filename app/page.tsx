@@ -12,12 +12,20 @@ export default function Home() {
       <section className="relative flex min-h-[100svh] flex-col justify-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20">
         <div className="mb-12 sm:mb-16">
           <Image
-            src="/BANNER.png"
+            src="/light.png"
             alt=""
             width={2757}
             height={912}
             priority
-            className="h-auto w-full"
+            className="banner-light h-auto w-full"
+          />
+          <Image
+            src="/dark.png"
+            alt=""
+            width={2757}
+            height={912}
+            priority
+            className="banner-dark h-auto w-full"
           />
         </div>
         <div className="grid grid-cols-12 gap-6">
@@ -29,8 +37,7 @@ export default function Home() {
               YEYANG
             </h1>
             <p className="mt-10 max-w-xl text-base leading-relaxed text-muted">
-              An ongoing index of selected work across identity, editorial, web and the spaces in
-              between. Most projects are made with collaborators credited below each entry.
+              A personal portfolio of selected design and development work.
             </p>
             <div className="mt-10 flex gap-6 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
               <Link href="/about" className="hover:text-ink">→ about</Link>

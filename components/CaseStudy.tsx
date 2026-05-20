@@ -96,21 +96,24 @@ export default function CaseStudy({
             <span data-meta>{project.year}</span>
           </div>
 
-          <div data-meta className="col-span-12 mt-10 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+          <div data-meta className="col-span-12 mt-16 text-center font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
             ( {project.index} ) {project.category}
           </div>
 
-          <div className="col-span-12 mt-10 min-w-0">
+          <div className="col-span-12 mt-6 min-w-0">
             <FitHeading
               text={project.title}
               as="h1"
               dataAttr="data-hero"
-              className="font-serif text-[14vw] leading-[0.86] tracking-tightest sm:text-[10vw]"
+              className="text-center font-serif text-5xl tracking-tightest sm:text-7xl"
             />
           </div>
 
           {project.intro && (
-            <p data-meta className="col-span-12 mt-10 max-w-3xl text-lg leading-relaxed sm:col-span-9 sm:col-start-2 sm:text-2xl">
+            <p
+              data-meta
+              className="col-span-12 mx-auto mt-10 max-w-2xl text-center font-mono text-sm leading-relaxed text-muted sm:text-[13px]"
+            >
               {project.intro}
             </p>
           )}
@@ -132,80 +135,40 @@ export default function CaseStudy({
       </div>
 
       <section data-blocks className="px-6 py-24 sm:px-10 sm:py-40">
-        <div className="grid grid-cols-12 gap-6">
-          <aside className="col-span-12 sm:col-span-3">
-            <ul className="space-y-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
-              {project.client && (
-                <li data-block className="flex flex-col gap-1 border-t border-line pt-3">
-                  <span>client</span>
-                  <span className="text-ink">{project.client}</span>
-                </li>
-              )}
-              {project.role && (
-                <li data-block className="flex flex-col gap-1 border-t border-line pt-3">
-                  <span>role</span>
-                  <span className="text-ink">{project.role}</span>
-                </li>
-              )}
-              {project.scope && (
-                <li data-block className="flex flex-col gap-1 border-t border-line pt-3">
-                  <span>scope</span>
-                  <span className="text-ink">{project.scope.join(", ")}</span>
-                </li>
-              )}
-              <li data-block className="flex flex-col gap-1 border-t border-line pt-3">
-                <span>year</span>
-                <span className="text-ink">{project.year}</span>
-              </li>
-              {project.liveUrl && (
-                <li data-block className="flex flex-col gap-1 border-t border-line pt-3">
-                  <span>live</span>
-                  <a
-                    data-cursor="link"
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-center gap-2 text-ink"
-                  >
-                    <span className="relative">
-                      visit site
-                      <span className="absolute -bottom-px left-0 h-px w-full bg-current transition-transform duration-500 group-hover:scale-x-0 origin-right" />
-                    </span>
-                    <span aria-hidden>↗</span>
-                  </a>
-                </li>
-              )}
-            </ul>
-          </aside>
-
-          <div className="col-span-12 space-y-12 sm:col-span-8 sm:col-start-5">
-            {project.approach && (
-              <div data-block>
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">approach</p>
-                <p className="mt-4 max-w-2xl text-lg leading-relaxed sm:text-xl">{project.approach}</p>
-              </div>
-            )}
-            {project.outcome && (
-              <div data-block>
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">outcome</p>
-                <p className="mt-4 max-w-2xl text-lg leading-relaxed sm:text-xl">{project.outcome}</p>
-              </div>
-            )}
+        <div className="mx-auto max-w-2xl space-y-14 text-center">
+          {project.approach && (
             <div data-block>
-              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">credits</p>
-              <ul className="mt-4 max-w-md">
-                {project.credits.map((c, i) => (
-                  <li
-                    key={i}
-                    className="flex justify-between gap-6 border-t border-line py-2 font-mono text-[11px] uppercase tracking-[0.18em]"
-                  >
-                    <span className="text-muted">{c.role}</span>
-                    <span>{c.name}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">approach</p>
+              <p className="mt-4 font-mono text-sm leading-relaxed text-ink sm:text-[13px]">
+                {project.approach}
+              </p>
             </div>
-          </div>
+          )}
+          {project.outcome && (
+            <div data-block>
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">outcome</p>
+              <p className="mt-4 font-mono text-sm leading-relaxed text-ink sm:text-[13px]">
+                {project.outcome}
+              </p>
+            </div>
+          )}
+          {project.liveUrl && (
+            <div data-block>
+              <a
+                data-cursor="link"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-ink"
+              >
+                <span className="relative">
+                  visit site
+                  <span className="absolute -bottom-px left-0 h-px w-full bg-current transition-transform duration-500 group-hover:scale-x-0 origin-right" />
+                </span>
+                <span aria-hidden>↗</span>
+              </a>
+            </div>
+          )}
         </div>
       </section>
 

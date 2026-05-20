@@ -43,7 +43,7 @@ export const projects: Project[] = [
       { role: "Design", name: "Yeyang" },
       { role: "Tools", name: "Figma" }
     ],
-    cover: "https://picsum.photos/seed/retro-ui-kit/2000/1250",
+    cover: "/work1-hero.png",
     gallery: [
       { src: "https://picsum.photos/seed/retro-ui-1/2000/1100", alt: "UI kit overview", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/retro-ui-2/1200/1500", alt: "Component sheet", span: "half", aspect: "4/5" },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       { role: "Design", name: "Yeyang" },
       { role: "Tools", name: "Figma · Photoshop" }
     ],
-    cover: "https://picsum.photos/seed/nintendo-redesign/2000/1250",
+    cover: "/work2-hero.png",
     gallery: [
       { src: "https://picsum.photos/seed/nintendo-1/2000/1100", alt: "Homepage hero", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/nintendo-2/2000/1100", alt: "Layout exploration", span: "full", aspect: "16/9" }
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       { role: "Design", name: "Yeyang" },
       { role: "Tools", name: "Figma" }
     ],
-    cover: "https://picsum.photos/seed/figma-animation/2000/1250",
+    cover: "/work3-hero.png",
     gallery: [
       { src: "https://picsum.photos/seed/figma-anim-1/2000/1100", alt: "Animation frames", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/figma-anim-2/1200/1500", alt: "Transition study", span: "half", aspect: "4/5" },
@@ -114,7 +114,7 @@ export const projects: Project[] = [
       { role: "Concept", name: "Yeyang" },
       { role: "Discipline", name: "Branding · Strategy" }
     ],
-    cover: "https://picsum.photos/seed/polaroid-campaign/2000/1250",
+    cover: "/work4-hero.png",
     gallery: [
       { src: "https://picsum.photos/seed/polaroid-1/2000/1100", alt: "Campaign visual", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/polaroid-2/1200/1500", alt: "Brand board", span: "half", aspect: "4/5" },
@@ -138,7 +138,7 @@ export const projects: Project[] = [
       { role: "Design", name: "Yeyang" },
       { role: "Tools", name: "Figma" }
     ],
-    cover: "https://picsum.photos/seed/game-settings-ui/2000/1250",
+    cover: "/work5-hero.png",
     gallery: [
       { src: "https://picsum.photos/seed/game-ui-1/2000/1100", alt: "Settings screen", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/game-ui-2/1200/1500", alt: "Component states", span: "half", aspect: "4/5" },
@@ -162,7 +162,7 @@ export const projects: Project[] = [
       { role: "Role", name: "UI / UX, Frontend" },
       { role: "Stack", name: "Web · Database" }
     ],
-    cover: "https://picsum.photos/seed/dark-reel/2000/1250",
+    cover: "/work6-hero.jpg",
     gallery: [
       { src: "https://picsum.photos/seed/dark-reel-1/2000/1100", alt: "Browse view", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/dark-reel-2/1200/1500", alt: "Review detail", span: "half", aspect: "4/5" },
@@ -186,7 +186,7 @@ export const projects: Project[] = [
       { role: "Animation", name: "Yeyang" },
       { role: "Tools", name: "After Effects · 3D" }
     ],
-    cover: "https://picsum.photos/seed/motion-3d/2000/1250",
+    cover: "/work7-hero.png",
     gallery: [
       { src: "https://picsum.photos/seed/motion-3d-1/2000/1100", alt: "Motion still", span: "full", aspect: "16/9" },
       { src: "https://picsum.photos/seed/motion-3d-2/1200/1500", alt: "3D render", span: "half", aspect: "4/5" },

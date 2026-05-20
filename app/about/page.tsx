@@ -8,10 +8,56 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 const experience = [
-  { year: "2022 — now", role: "Independent studio", place: "Self-directed" },
-  { year: "2019 — 2022", role: "Senior designer", place: "Field & Form, Berlin" },
-  { year: "2017 — 2019", role: "Designer", place: "Studio North, Copenhagen" },
-  { year: "2016 — 2017", role: "Design intern", place: "Atelier Quill, Paris" }
+  {
+    year: "2026 — now",
+    role: "Brand & Digital Designer",
+    place: "First Class Property Services, Winnipeg",
+    description:
+      "Participated in the design and development of an internal company dashboard, primarily focusing on UI/UX design. Collaborated with the development team to create responsive interfaces and improve data visualization. Also supported administrative and operational tasks related to system management."
+  },
+  {
+    year: "2025",
+    role: "UI/UX Designer",
+    place: "Telpay, Winnipeg",
+    type: "Intern",
+    description:
+      "Designed mobile app UI and responsive web interfaces, created wireframes and prototypes, and collaborated with developers to ensure a consistent and user-friendly experience across platforms."
+  },
+  {
+    year: "2023 — 2026",
+    role: "Waitress & Receptionist",
+    place: "Good Earth Restaurant, Winnipeg",
+    type: "Part-time",
+    description:
+      "Handled incoming customer calls, managed reservations, and addressed guest inquiries and issues. Provided table service, ensured a pleasant dining experience, and supported daily restaurant operations."
+  },
+  {
+    year: "2022 — 2023",
+    role: "Nail Designer / Artist",
+    place: "Le Soleil Nail Salon, New York",
+    description:
+      "Assisted with nail design and drawing at a salon on Broadway in Manhattan. This experience helped enhance my practical skills and creativity, and improved my communication skills through talks with customers."
+  },
+  {
+    year: "2021 — 2022",
+    role: "Graphic Designer & Illustrator",
+    place: "Yuedi, Hangzhou",
+    description:
+      "Worked on creating product illustrations and designing patterns for a trading company to enhance the visual appeal of merchandise and marketing materials."
+  }
+];
+
+const education = [
+  {
+    year: "2023 — 2025",
+    degree: "Advanced Diploma in Interactive Design",
+    place: "Red River College Polytech"
+  },
+  {
+    year: "2018 — 2022",
+    degree: "Bachelor of Fine Art, Illustration",
+    place: "School of Visual Arts, New York"
+  }
 ];
 
 export default function AboutPage() {
@@ -67,72 +113,121 @@ export default function AboutPage() {
     return () => ctx.revert();
   }, []);
 
-  const headline = "Hi, I'm a designer.";
+  const headline = "Hi, I'm Yeyang.";
   const chars = headline.split("");
 
   return (
     <div ref={root}>
-      <section className="px-6 pt-32 pb-20 sm:px-10 sm:pt-40">
-        <div className="grid grid-cols-12 gap-6">
-          <p data-fade className="col-span-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted sm:col-span-3">
+      <section className="px-6 pt-32 pb-24 sm:px-10 sm:pt-40 sm:pb-32">
+        <div className="mx-auto max-w-4xl">
+          <p data-fade className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
             ( about )
           </p>
-          <div className="col-span-12 sm:col-span-9">
-            <h1
-              data-hero
-              className="font-serif text-[12vw] leading-[0.9] tracking-tightest sm:text-[8vw]"
-            >
-              {chars.map((c, i) => (
-                <span key={i} className="line-mask">
-                  <span className="char">{c === " " ? " " : c}</span>
-                </span>
-              ))}
-            </h1>
-            <p data-fade className="mt-12 text-lg leading-relaxed sm:text-xl">
-              I'm an independent designer working across identity, editorial and the web.
-              I care about how language and image are set on the page, and prefer slow,
-              well-credited work to fast, anonymous output. Based between Lisbon and Berlin,
-              available for selected projects.
-            </p>
+
+          <div className="mt-10 grid grid-cols-12 items-center gap-x-10 gap-y-10 sm:mt-14">
+            <div ref={portraitWrap} className="col-span-12 sm:col-span-6">
+              <div className="relative aspect-[587/800] w-full overflow-hidden">
+                <Image
+                  ref={portraitImg as never}
+                  src="/portrait.jpg"
+                  alt="Portrait of Yeyang"
+                  fill
+                  sizes="(min-width: 640px) 45vw, 100vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
+            <div className="col-span-12 flex flex-col justify-center sm:col-span-6">
+              <h1
+                data-hero
+                className="font-serif text-3xl leading-[1.1] tracking-tight sm:text-4xl"
+              >
+                {chars.map((c, i) => (
+                  <span key={i} className="line-mask">
+                    <span className="char">{c === " " ? " " : c}</span>
+                  </span>
+                ))}
+              </h1>
+              <div
+                data-fade
+                className="mt-6 space-y-4 font-mono text-[13px] leading-[1.75] text-ink sm:text-sm"
+              >
+                <p>
+                  I'm a designer based in Winnipeg, Canada. Originally from Hangzhou, I moved to
+                  New York to study illustration at the School of Visual Arts, and later continued
+                  into interactive design at Red River College Polytech.
+                </p>
+                <p>
+                  My work moves between brand, UI and the web. An illustration background shapes
+                  the way I think about interfaces — as something visual and felt, not only
+                  functional. I care about typography, pacing, and the quiet details that make a
+                  product feel considered.
+                </p>
+                <p>
+                  Currently I'm a Brand & Digital Designer at First Class Property Services,
+                  building internal tools and shaping the company's visual system. Outside of work
+                  I take on selected projects, draw, and keep learning code.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <div ref={portraitWrap} className="overflow-hidden px-6 sm:px-10">
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-line">
-          <Image
-            ref={portraitImg as never}
-            src="https://picsum.photos/seed/studio-room/2000/1100"
-            alt="Studio interior"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-      </div>
-
       <section data-experience className="px-6 py-24 sm:px-10 sm:py-40">
         <div className="grid grid-cols-12 gap-6">
           <p className="col-span-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted sm:col-span-3">
-            experience
+            professional experience
           </p>
           <ul className="col-span-12 sm:col-span-8 sm:col-start-5">
             {experience.map((e, i) => (
               <li
                 key={i}
                 data-row
-                className="grid grid-cols-12 items-baseline gap-4 border-b border-line py-6"
+                className="grid grid-cols-12 items-baseline gap-x-4 gap-y-3 border-b border-line py-6"
               >
-                <span className="col-span-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                <span className="col-span-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted sm:col-span-3">
+                  {e.year}
+                  {e.type && <span className="ml-2 lowercase">| {e.type.toLowerCase()}</span>}
+                </span>
+                <div className="col-span-12 sm:col-span-9">
+                  <p className="font-serif text-2xl tracking-tight sm:text-3xl">{e.role}</p>
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                    {e.place}
+                  </p>
+                  <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:text-[15px]">
+                    {e.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="px-6 pb-24 sm:px-10 sm:pb-40">
+        <div className="grid grid-cols-12 gap-6">
+          <p className="col-span-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted sm:col-span-3">
+            education
+          </p>
+          <ul className="col-span-12 sm:col-span-8 sm:col-start-5">
+            {education.map((e, i) => (
+              <li
+                key={i}
+                data-row
+                className="grid grid-cols-12 items-baseline gap-x-4 gap-y-3 border-b border-line py-6"
+              >
+                <span className="col-span-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted sm:col-span-3">
                   {e.year}
                 </span>
-                <span className="col-span-9 font-serif text-2xl tracking-tight sm:text-3xl">
-                  {e.role}
-                  <span className="ml-3 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                <div className="col-span-12 sm:col-span-9">
+                  <p className="font-serif text-2xl tracking-tight sm:text-3xl">{e.degree}</p>
+                  <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
                     {e.place}
-                  </span>
-                </span>
+                  </p>
+                </div>
               </li>
             ))}
           </ul>

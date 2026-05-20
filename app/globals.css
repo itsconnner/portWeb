@@ -94,6 +94,11 @@ video {
   display: block;
 }
 
+[data-theme="light"] .banner-dark,
+[data-theme="dark"] .banner-light {
+  display: none;
+}
+
 /* keep native scrollbar visible */
 body::-webkit-scrollbar {
   width: 10px;
