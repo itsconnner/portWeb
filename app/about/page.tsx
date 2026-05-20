@@ -163,7 +163,7 @@ export default function AboutPage() {
                   I'm comfortable working across branding and digital interfaces, moving from
                   concept exploration into structured design systems. I tend to approach projects
                   from a visual-first perspective, often using illustration thinking to guide
-                  interface decisions — especially when defining tone, hierarchy, and emotional
+                  interface decisions, especially when defining tone, hierarchy, and emotional
                   clarity in a product.
                 </p>
                 <p>
