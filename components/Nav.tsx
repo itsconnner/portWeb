@@ -13,9 +13,9 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 mix-blend-difference">
-      <div className="flex items-center justify-between px-6 py-5 text-white sm:px-10">
-        <Link href="/" className="font-serif text-xl tracking-tightest">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-line/10 bg-bg/30 backdrop-blur-md backdrop-saturate-150">
+      <div className="flex items-center justify-between px-6 py-5 sm:px-10">
+        <Link href="/" className="font-mono text-sm tracking-tight">
           Yeyang Wang
         </Link>
         <nav className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.18em] sm:gap-10">

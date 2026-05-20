@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ProjectSection from "@/components/ProjectSection";
 import ScrollCounter from "@/components/ScrollCounter";
@@ -9,6 +10,16 @@ export default function Home() {
       <ScrollCounter total={projects.length} />
 
       <section className="relative flex min-h-[100svh] flex-col justify-end px-6 pb-16 pt-32 sm:px-10 sm:pb-20">
+        <div className="mb-12 sm:mb-16">
+          <Image
+            src="/BANNER.png"
+            alt=""
+            width={2757}
+            height={912}
+            priority
+            className="h-auto w-full"
+          />
+        </div>
         <div className="grid grid-cols-12 gap-6">
           <p className="col-span-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted sm:col-span-3">
             ( {String(projects.length).padStart(2, "0")} ) selected
