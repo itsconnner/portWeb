@@ -3,6 +3,13 @@ export type ProjectGalleryItem = {
   alt: string;
   span?: "full" | "half" | "third";
   aspect?: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  maxWidth?: number;
+  type?: "image" | "youtube";
+  videoId?: string;
+  description?: string;
 };
 
 export type Project = {
@@ -21,8 +28,12 @@ export type Project = {
   outcome?: string;
   credits: { role: string; name: string }[];
   cover: string;
+  coverWidth?: number;
+  coverHeight?: number;
+  hideHeroOnDetail?: boolean;
   gallery?: ProjectGalleryItem[];
   liveUrl?: string;
+  liveUrlLabel?: string;
 };
 
 export const projects: Project[] = [
@@ -44,10 +55,17 @@ export const projects: Project[] = [
       { role: "Tools", name: "Figma" }
     ],
     cover: "/work1-hero.png",
+    coverWidth: 583,
+    coverHeight: 332,
+    hideHeroOnDetail: true,
+    liveUrl:
+      "https://www.figma.com/proto/0RH1mKhx5nrX2ZEPEegeSz/ui-kit?page-id=83%3A1226&node-id=186-6469&p=f&viewport=442%2C277%2C0.16&t=FoK7cIL8xp0b37kX-1&scaling=min-zoom&content-scaling=fixed",
+    liveUrlLabel: "view figma prototype",
     gallery: [
-      { src: "https://picsum.photos/seed/retro-ui-1/2000/1100", alt: "UI kit overview", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/retro-ui-2/1200/1500", alt: "Component sheet", span: "half", aspect: "4/5" },
-      { src: "https://picsum.photos/seed/retro-ui-3/1200/1500", alt: "Type specimen", span: "half", aspect: "4/5" }
+      { src: "/w1/uikit.png", alt: "UI kit overview", span: "full", width: 3190, height: 2404 },
+      { src: "/w1/screen.png", alt: "Screen sample", span: "full", width: 1731, height: 1564 },
+      { src: "/w1/button.png", alt: "Button states", span: "half", width: 1606, height: 912 },
+      { src: "/w1/bwi.png", alt: "Visual exploration", span: "half", width: 1638, height: 926 }
     ]
   },
   {
@@ -68,9 +86,14 @@ export const projects: Project[] = [
       { role: "Tools", name: "Figma · Photoshop" }
     ],
     cover: "/work2-hero.png",
+    coverWidth: 1920,
+    coverHeight: 1080,
+    hideHeroOnDetail: true,
     gallery: [
-      { src: "https://picsum.photos/seed/nintendo-1/2000/1100", alt: "Homepage hero", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/nintendo-2/2000/1100", alt: "Layout exploration", span: "full", aspect: "16/9" }
+      { src: "/w2/about.png", alt: "Home page — desktop", span: "full", width: 1440, height: 5699, caption: "Home — desktop" },
+      { src: "/w2/event.png", alt: "Event page — desktop", span: "full", width: 1440, height: 4696, caption: "Event — desktop" },
+      { src: "/w2/about-mobile.png", alt: "Home page — mobile", span: "half", width: 640, height: 6075, caption: "Home — mobile", maxWidth: 320 },
+      { src: "/w2/event-mobile.png", alt: "Event page — mobile", span: "half", width: 640, height: 4370, caption: "Event — mobile", maxWidth: 320 }
     ]
   },
   {
@@ -91,10 +114,16 @@ export const projects: Project[] = [
       { role: "Tools", name: "Figma" }
     ],
     cover: "/work3-hero.png",
+    coverWidth: 1288,
+    coverHeight: 832,
+    hideHeroOnDetail: true,
+    liveUrl:
+      "https://www.figma.com/proto/Fv0ynYQO1Kk11WAZSTlvPp/Single-Page-Yeyang_Wang?page-id=0%3A1&node-id=1-18&p=f&viewport=486%2C324%2C0.08&t=t5Tg7eJiHGlEPuGG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A18",
+    liveUrlLabel: "view figma prototype",
     gallery: [
-      { src: "https://picsum.photos/seed/figma-anim-1/2000/1100", alt: "Animation frames", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/figma-anim-2/1200/1500", alt: "Transition study", span: "half", aspect: "4/5" },
-      { src: "https://picsum.photos/seed/figma-anim-3/1200/1500", alt: "Interaction map", span: "half", aspect: "4/5" }
+      { src: "/w3/desktop.png", alt: "Desktop layout", span: "full", width: 1440, height: 5015, caption: "Desktop" },
+      { src: "/w3/tablet.png", alt: "Tablet layout", span: "full", width: 1024, height: 3566, caption: "Tablet", maxWidth: 720 },
+      { src: "/w3/phone.png", alt: "Mobile layout", span: "full", width: 430, height: 5487, caption: "Mobile", maxWidth: 320 }
     ]
   },
   {
@@ -115,10 +144,34 @@ export const projects: Project[] = [
       { role: "Discipline", name: "Branding · Strategy" }
     ],
     cover: "/work4-hero.png",
+    coverWidth: 1375,
+    coverHeight: 1063,
+    hideHeroOnDetail: true,
     gallery: [
-      { src: "https://picsum.photos/seed/polaroid-1/2000/1100", alt: "Campaign visual", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/polaroid-2/1200/1500", alt: "Brand board", span: "half", aspect: "4/5" },
-      { src: "https://picsum.photos/seed/polaroid-3/1200/1500", alt: "Audience study", span: "half", aspect: "4/5" }
+      { src: "/w4/cover.png", alt: "Campaign cover", span: "full", width: 1375, height: 1063, caption: "Cover" },
+      { src: "/w4/intro.png", alt: "Introduction", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/history.png", alt: "Brand history", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/smart-goals.png", alt: "SMART goals", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/personas.png", alt: "Personas overview", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/persona.png", alt: "Persona setup", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/persona-1.png", alt: "Persona 1", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/persona-2.png", alt: "Persona 2", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/persona-3.png", alt: "Persona 3", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/theme.png", alt: "Theme direction", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/guidelines.png", alt: "Brand guidelines", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/deliverables.png", alt: "Deliverables", span: "full", width: 1375, height: 1063, caption: "Deliverables" },
+      { src: "/w4/print-1.png", alt: "Print collateral 1", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/print-2.png", alt: "Print collateral 2", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/print-3.png", alt: "Print collateral 3", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/print-4.png", alt: "Print collateral 4", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/print-5.png", alt: "Print collateral 5", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/print-6.png", alt: "Print collateral 6", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/social.png", alt: "Social campaign", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/social-2.png", alt: "Social campaign — variations", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/video.png", alt: "Video concept", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/video-1.png", alt: "Video frame 1", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/video-2.png", alt: "Video frame 2", span: "half", width: 1375, height: 1063 },
+      { src: "/w4/conclusion.png", alt: "Conclusion", span: "full", width: 1375, height: 1063, caption: "Conclusion" }
     ]
   },
   {
@@ -131,43 +184,47 @@ export const projects: Project[] = [
     role: "UI Design, UX",
     scope: ["UI Design", "UX", "Accessibility"],
     description:
-      "Designed a clean and functional settings interface for an indie game project, focusing on usability, accessibility, visual clarity, and player-friendly interaction design.",
+      "UI design for an indie game by a friend. All pixel assets including buttons, panels, and icons were drawn from scratch in Aseprite, with attention to readability at native pixel scale and a cohesive 8/16 bit visual language.",
     intro:
-      "Designed a clean and functional settings interface for an indie game project, focusing on usability, accessibility, visual clarity, and player-friendly interaction design.",
+      "UI design for an indie game by a friend. All pixel assets including buttons, panels, and icons were drawn from scratch in Aseprite, with attention to readability at native pixel scale and a cohesive 8/16 bit visual language.",
+    credits: [
+      { role: "Design", name: "Yeyang" },
+      { role: "Tools", name: "Figma · Aseprite" }
+    ],
+    cover: "/work5-hero.png",
+    coverWidth: 3003,
+    coverHeight: 2034,
+    hideHeroOnDetail: true,
+    gallery: [
+      { src: "/w5/group-53.png", alt: "UI assets overview", span: "full", width: 3003, height: 2034, caption: "Pixel UI assets" },
+      { src: "/w5/setting-page.png", alt: "Settings page", span: "full", width: 1920, height: 1200, caption: "Settings" },
+      { src: "/w5/without-title.png", alt: "In-game UI", span: "full", width: 1920, height: 1200, caption: "In-game UI" },
+      { src: "/w5/group-59.png", alt: "Component sheet", span: "full", width: 1840, height: 1102, caption: "Components" }
+    ]
+  },
+  {
+    id: "uniqlo-app",
+    slug: "uniqlo-app",
+    index: "06",
+    category: "Mobile App Design",
+    title: "Uniqlo App Design",
+    year: "2024",
+    role: "UI/UX",
+    scope: ["UI/UX", "Mobile", "Prototype"],
+    description:
+      "A concept redesign of the Uniqlo mobile shopping app, focused on cleaner product browsing, simpler checkout, and a more cohesive visual language across the experience.",
+    intro:
+      "A concept redesign of the Uniqlo mobile shopping app, focused on cleaner product browsing, simpler checkout, and a more cohesive visual language across the experience.",
     credits: [
       { role: "Design", name: "Yeyang" },
       { role: "Tools", name: "Figma" }
     ],
-    cover: "/work5-hero.png",
-    gallery: [
-      { src: "https://picsum.photos/seed/game-ui-1/2000/1100", alt: "Settings screen", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/game-ui-2/1200/1500", alt: "Component states", span: "half", aspect: "4/5" },
-      { src: "https://picsum.photos/seed/game-ui-3/1200/1500", alt: "Accessibility notes", span: "half", aspect: "4/5" }
-    ]
-  },
-  {
-    id: "dark-reel",
-    slug: "dark-reel",
-    index: "06",
-    category: "Web App",
-    title: "Dark Reel",
-    year: "2024",
-    role: "UI/UX, Frontend",
-    scope: ["UI/UX", "Frontend", "Database"],
-    description:
-      "Collaborated on the development of a movie review platform featuring user accounts, database integration, and review management systems. Contributed to interface design and overall user experience planning.",
-    intro:
-      "Collaborated on the development of a movie review platform featuring user accounts, database integration, and review management systems. Contributed to interface design and overall user experience planning.",
-    credits: [
-      { role: "Role", name: "UI / UX, Frontend" },
-      { role: "Stack", name: "Web · Database" }
-    ],
-    cover: "/work6-hero.jpg",
-    gallery: [
-      { src: "https://picsum.photos/seed/dark-reel-1/2000/1100", alt: "Browse view", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/dark-reel-2/1200/1500", alt: "Review detail", span: "half", aspect: "4/5" },
-      { src: "https://picsum.photos/seed/dark-reel-3/1200/1500", alt: "Account flow", span: "half", aspect: "4/5" }
-    ]
+    cover: "/work7-hero.png",
+    coverWidth: 1440,
+    coverHeight: 1024,
+    liveUrl:
+      "https://www.figma.com/proto/w937paaD2JjPbI115CntHO/UID_A01_Wang_Yeyang?page-id=201%3A1462&node-id=201-1656&p=f&viewport=144%2C244%2C0.16&t=cGIKO8JoH7OVW01l-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=201%3A1649",
+    liveUrlLabel: "view figma prototype"
   },
   {
     id: "motion-3d",
@@ -179,18 +236,38 @@ export const projects: Project[] = [
     role: "Motion, 3D",
     scope: ["After Effects", "3D Modeling", "Compositing"],
     description:
-      "Produced a collection of animation and modeling projects using After Effects and 3D design tools, exploring motion graphics, visual storytelling, compositing, and creative experimentation.",
+      "Two short motion projects exploring storytelling through After Effects and animated comic-style compositing.",
     intro:
-      "Produced a collection of animation and modeling projects using After Effects and 3D design tools, exploring motion graphics, visual storytelling, compositing, and creative experimentation.",
+      "Two short motion projects exploring storytelling through After Effects and animated comic-style compositing.",
     credits: [
       { role: "Animation", name: "Yeyang" },
-      { role: "Tools", name: "After Effects · 3D" }
+      { role: "Tools", name: "After Effects · Photoshop" }
     ],
-    cover: "/work7-hero.png",
+    cover: "/work6-hero.jpg",
+    coverWidth: 1440,
+    coverHeight: 1024,
+    hideHeroOnDetail: true,
     gallery: [
-      { src: "https://picsum.photos/seed/motion-3d-1/2000/1100", alt: "Motion still", span: "full", aspect: "16/9" },
-      { src: "https://picsum.photos/seed/motion-3d-2/1200/1500", alt: "3D render", span: "half", aspect: "4/5" },
-      { src: "https://picsum.photos/seed/motion-3d-3/1200/1500", alt: "Composite", span: "half", aspect: "4/5" }
+      {
+        type: "youtube",
+        videoId: "Qext2GtAGYQ",
+        src: "https://youtu.be/Qext2GtAGYQ",
+        alt: "Fan-made puzzle game trailer",
+        span: "full",
+        caption: "Fan-made puzzle game trailer",
+        description:
+          "A teaser for a fan-made puzzle game. The title was designed in Photoshop. All animation and 3D modeling were done in After Effects. Some clips are gameplay footage from the game itself."
+      },
+      {
+        type: "youtube",
+        videoId: "M3_i6Hk7Ji4",
+        src: "https://youtu.be/M3_i6Hk7Ji4",
+        alt: "Animated comic — Future State: Dark Detective",
+        span: "full",
+        caption: "Animated comic — Future State: Dark Detective #1",
+        description:
+          "A motion comic adapted from Batman: Future State — Dark Detective #1. Original comic art and story by DC; animation and compositing by me."
+      }
     ]
   }
 ];
@@ -203,6 +280,12 @@ export function getNextProject(slug: string) {
   const i = projects.findIndex((p) => p.slug === slug);
   if (i < 0) return projects[0];
   return projects[(i + 1) % projects.length];
+}
+
+export function getPrevProject(slug: string) {
+  const i = projects.findIndex((p) => p.slug === slug);
+  if (i < 0) return projects[projects.length - 1];
+  return projects[(i - 1 + projects.length) % projects.length];
 }
 
 export const archive = [

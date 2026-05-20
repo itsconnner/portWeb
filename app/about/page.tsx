@@ -154,21 +154,22 @@ export default function AboutPage() {
                 data-fade
                 className="mt-6 space-y-4 font-mono text-[13px] leading-[1.75] text-ink sm:text-sm"
               >
+                <p>I'm a designer and developer based in Winnipeg.</p>
                 <p>
-                  I'm a designer based in Winnipeg, Canada. Originally from Hangzhou, I moved to
-                  New York to study illustration at the School of Visual Arts, and later continued
-                  into interactive design at Red River College Polytech.
+                  My work sits between brand, UI, and web design, with a strong focus on visual
+                  systems and interface thinking.
                 </p>
                 <p>
-                  My work moves between brand, UI and the web. An illustration background shapes
-                  the way I think about interfaces — as something visual and felt, not only
-                  functional. I care about typography, pacing, and the quiet details that make a
-                  product feel considered.
+                  I'm comfortable working across branding and digital interfaces, moving from
+                  concept exploration into structured design systems. I tend to approach projects
+                  from a visual-first perspective, often using illustration thinking to guide
+                  interface decisions — especially when defining tone, hierarchy, and emotional
+                  clarity in a product.
                 </p>
                 <p>
-                  Currently I'm a Brand & Digital Designer at First Class Property Services,
-                  building internal tools and shaping the company's visual system. Outside of work
-                  I take on selected projects, draw, and keep learning code.
+                  Outside of work, I draw regularly and continue developing illustration as a
+                  parallel practice. I also keep learning code, mainly to better understand how
+                  design behaves when it becomes interactive.
                 </p>
               </div>
             </div>
